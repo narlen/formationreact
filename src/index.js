@@ -1,19 +1,24 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import "bulma/css/bulma.css";
 import "./assets/styles.scss";
 
-import Header from "./components/Header.jsx";
-import Home from "./components/Home.jsx";
-import MainContainer from "./components/MainContainer.jsx";
+import Header from "./Structure/Header.jsx";
+import Router from "./Structure/Router.jsx";
+import ErrorBoundary from "./Structure/ErrorBoundary.jsx";
 
 function App() {
   return (
     <>
       <div className="App">
-        <Header />
-        <MainContainer />
+        <BrowserRouter>
+          <Header />
+          <ErrorBoundary>
+            <Router />
+          </ErrorBoundary>
+        </BrowserRouter>
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Home extends Component {
   render() {
@@ -10,9 +11,9 @@ class Home extends Component {
             <h2 className="subtitle is-size-3">
               Juste les <span className="best">meilleures</span> pizzas.
             </h2>
-            <a href="#" className="button is-large is-primary">
+            <Link to="/pizzas" className="button is-large is-primary">
               Commander maintenant
-            </a>
+            </Link>
           </div>
         </div>
       </section>

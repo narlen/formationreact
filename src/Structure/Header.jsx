@@ -1,14 +1,15 @@
 import React from "react";
 import Logo from "../img/logo.png";
+import { NavLink, Link } from "react-router-dom";
 
 class Header extends React.Component {
   render() {
     return (
       <nav className="is-primary navbar">
         <div className="navbar-brand">
-          <a className="navbar-item active" href="#">
+        <Link exact to="/" className="navbar-item">
             <img src={Logo} alt="PizzaYolo logo" />
-          </a>
+        </Link>
           <button
             className="navbar-burger"
             data-target="navMenu"
@@ -22,12 +23,12 @@ class Header extends React.Component {
         </div>
         <div className="navbar-menu" id="navMenu">
           <div className="navbar-start">
-            <a className="navbar-item" href="#">
+          <NavLink exact to="/" activeClassName="active" className="navbar-item">
               Accueil
-            </a>
-            <a className="navbar-item selected" href="#">
+            </NavLink>
+            <NavLink to="/pizzas" activeClassName="active" className="navbar-item">
               Nos Pizzas
-            </a>
+            </NavLink>
           </div>
         </div>
       </nav>

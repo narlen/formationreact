@@ -2,6 +2,7 @@ import pizzaData from "./pizzas.json";
 
 export const fetchPizza = () =>
   new Promise(resolve => {
-    setTimeout(() => resolve(pizzaData), 2000);
+    setTimeout(() => resolve(pizzaData), 500);
   });
+
 export default fetchPizza;

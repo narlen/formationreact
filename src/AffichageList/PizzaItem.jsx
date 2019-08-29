@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { number, func } from "prop-types";
+import React from "react";
+import { Link } from "react-router-dom";
+import {PropTypes} from "prop-types";
 
-
-function PizzaItem({ name, price, content, incrementCounter, test }) {
+function PizzaItem({ name, price, content, addPizza }) {
   return (
     <div className="pizza-link">
       <div className="card">
@@ -11,7 +11,9 @@ function PizzaItem({ name, price, content, incrementCounter, test }) {
             <div className="media-content">
               <div className="columns">
                 <div className="column is-9">
-                  <p className="title is-4">{name}</p>
+                  <Link to={`/pizza/${name}`} className="title is-4">
+                    {name}
+                  </Link>
                 </div>
                 <div className="column is-3">
                   <p className="title is-4 has-text-primary">{price} €</p>
@@ -23,7 +25,7 @@ function PizzaItem({ name, price, content, incrementCounter, test }) {
           <button
             type="button"
             className="button is-primary is-small is-rounded"
-            onClick={incrementCounter}
+            onClick={() => addPizza({ name, price })}
           >
             Ajouter au panier
           </button>
@@ -32,15 +34,11 @@ function PizzaItem({ name, price, content, incrementCounter, test }) {
     </div>
   );
 }
-
 PizzaItem.defaultProps = {
-  name: "Margarita",
-  price: 0,
-  content: "Champignon, lardon"
-};
-PizzaItem.propTypes = {
-  price: number.isRequired,
-  name: func
+  name: "Renaudaine"
 };
 
+PizzaItem.propTypes = {
+  price: PropTypes.number.isRequired
+};
 export default PizzaItem;
