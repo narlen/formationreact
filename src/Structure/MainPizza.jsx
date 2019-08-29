@@ -16,9 +16,6 @@ class MainPizza extends Component {
     this.setState({ panier: [...this.state.panier, a] });
   };
 
-  flushCart = () => {
-    this.setState({ panier: [], test: true });
-  };
 
   render() {
     if(this.state.test){
@@ -29,15 +26,10 @@ class MainPizza extends Component {
         <div className="container">
           <div className="columns is-multiline">
             <div className="column is-10-desktop is-12-tablet">
-              <PizzaListContainer 
-              addPizza = {this.addPizza}
-              />
+              <PizzaListContainer/>
             </div>
             <div className="column is-2-desktop is-12-tablet">
-              <Cart
-                flushCart={this.flushCart}
-                panier={this.state.panier}
-              />
+              <Cart/>
             </div>
           </div>
         </div>

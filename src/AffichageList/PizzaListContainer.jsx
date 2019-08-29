@@ -37,7 +37,6 @@ class PizzaListContainer extends Component {
         pizzasTemp= {this.state.pizzasTemp}
         pizzas= {this.state.pizzas}
         updateSearch={this.updateSearch}
-        addPizza={this.props.addPizza}
       />
     );
   }

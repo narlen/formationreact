@@ -40,7 +40,7 @@ export default function PizzaList(props) {
     );
 }
 PizzaItem.propTypes = {
+  updateSearch: PropTypes.function,
   pizzasTemp: PropTypes.array,
-  updateSearch: PropTypes.func,
   price: PropTypes.number.isRequired
 };
